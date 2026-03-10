@@ -11,7 +11,7 @@ Starting the project
     - I now will use MLX42 which is newer and works.
 
 Understanding the flags 
-    - MLX42 api requires me to use 9 new flags when compiling. 
+    - MLX42 api requires me to use 4 new flags when compiling. 
 
 	Library I have installed    
 	- mlx42 
@@ -29,12 +29,23 @@ Understanding the flags
 	-o  → What should the program be called?
 
 
--I  → where headers are
--L  → where libraries are
--l  → which libraries to use
-
 Understanding 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Archive 
 
 %.o: %.c
 	$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
