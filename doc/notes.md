@@ -31,15 +31,47 @@ Understanding the flags
 
 Understanding 
 
+I am able to make a window appear with MLX42 by using the following functions:
 
+mlx_init();
+mlx_loop();
+mlx_terminate(mlx);
 
+Before I use the first function (mlx_init();) I must first initialise a variable called mlx_t* mlx; This is a structure containing the current window instance.
+Here is the struct:
 
+typedef struct mlx
+{
+	void*		window;
+	void*		context;
+	int32_t		width;
+	int32_t		height;
+	double		delta_time;
+}	mlx_t;
 
+If I want to add something inside the window I can initialise another variable and then use the mlx_new_image() function. 
 
+The mlx_new_image() function needs three values to be passed in:
+	1. The window you want the image to appear in 
+	2. The width of the image
+	3. The height of the image
 
+The function will return NULL if an error occured 
 
+The variable I should initalise is the mlx_image_t struct.
 
+typedef struct mlx_image
+{
+	const uint32_t	width;		// Image width 
+	const uint32_t	height;		// Image height
+	uint8_t*		pixels;		// pixel data <--- what is this, color?
+	mlx_instance_t*	instances;	// Location of the image (x,y,z positions)
+	int32_t			count;		// element count <--- what does this mean?
+	bool			enabled;	// Draw to screen yes or no
+	void*			context;	// openGL data <--- what data?
+}	mlx_image_t;
 
+Inorder to put the shape actually on the window I need to use the mlx_image_to_window() function. 
 
 
 
