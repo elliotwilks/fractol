@@ -47,8 +47,6 @@ void ft_hook(void* param)
 		image->instances[0].x += 5;
 }
 
-// -----------------------------------------------------------------------------
-
 int32_t main(void)
 {
 	mlx_t* mlx;
