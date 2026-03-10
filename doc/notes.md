@@ -5,6 +5,37 @@ Notes for project
 	- But initallay just run the configure script in the root of the repository.
 	- Add the following rule to your makefile (make sure the library in a folder called mlx_linux in the root of your project)
 
+Starting the project 
+
+    - I tried to use minilibx however found that the repository is old and broken. 
+    - I now will use MLX42 which is newer and works.
+
+Understanding the flags 
+    - MLX42 api requires me to use 9 new flags when compiling. 
+
+	Library I have installed    
+	- mlx42 
+
+	Already on my system
+    - glfw 
+    - GL 
+  	- m 
+  	- dl 
+  	- pthread 
+
+	-I  → Where are the headers?
+	-L  → Where are the libraries?
+	-l  → Which libraries should I use?
+	-o  → What should the program be called?
+
+
+-I  → where headers are
+-L  → where libraries are
+-l  → which libraries to use
+
+Understanding 
+
+
 %.o: %.c
 	$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
